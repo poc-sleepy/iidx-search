@@ -1,0 +1,15 @@
+table:
+  name: versions
+  schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - display_order
+        - id
+        - name
+        - short_name
+        - created_at
+        - updated_at
+      filter: {}
+    comment: ""

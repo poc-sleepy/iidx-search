@@ -1,0 +1,83 @@
+table:
+  name: tracks
+  schema: public
+object_relationships:
+  - name: song
+    using:
+      foreign_key_constraint_on: song_id
+computed_fields:
+  - name: is_soflan
+    definition:
+      function:
+        name: track_is_soflan
+        schema: public
+  - name: score_a
+    definition:
+      function:
+        name: track_score_a
+        schema: public
+  - name: score_aa
+    definition:
+      function:
+        name: track_score_aa
+        schema: public
+  - name: score_aaa
+    definition:
+      function:
+        name: track_score_aaa
+        schema: public
+  - name: score_b
+    definition:
+      function:
+        name: track_score_b
+        schema: public
+  - name: score_c
+    definition:
+      function:
+        name: track_score_c
+        schema: public
+  - name: score_d
+    definition:
+      function:
+        name: track_score_d
+        schema: public
+  - name: score_e
+    definition:
+      function:
+        name: track_score_e
+        schema: public
+  - name: score_max
+    definition:
+      function:
+        name: track_score_max
+        schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - is_active
+        - level
+        - max_bpm
+        - min_bpm
+        - notes
+        - id
+        - play_style
+        - song_id
+        - track_type
+        - created_at
+        - updated_at
+      computed_fields:
+        - is_soflan
+        - score_a
+        - score_aa
+        - score_aaa
+        - score_b
+        - score_c
+        - score_d
+        - score_e
+        - score_max
+      filter:
+        is_active:
+          _eq: true
+      limit: 100
+    comment: ""

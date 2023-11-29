@@ -1,0 +1,32 @@
+table:
+  name: songs
+  schema: public
+object_relationships:
+  - name: version
+    using:
+      foreign_key_constraint_on: version_id
+array_relationships:
+  - name: tracks
+    using:
+      foreign_key_constraint_on:
+        column: song_id
+        table:
+          name: tracks
+          schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - is_active
+        - artist
+        - genre
+        - id
+        - title
+        - version_id
+        - created_at
+        - updated_at
+      filter:
+        is_active:
+          _eq: true
+      limit: 50
+    comment: ""

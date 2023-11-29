@@ -1,0 +1,15 @@
+batch_limit:
+  global: 3
+  per_role: {}
+depth_limit:
+  global: 3
+  per_role: {}
+disabled: false
+rate_limit:
+  global:
+    max_reqs_per_min: 10
+    unique_params: IP
+  per_role: {}
+time_limit:
+  global: 10
+  per_role: {}

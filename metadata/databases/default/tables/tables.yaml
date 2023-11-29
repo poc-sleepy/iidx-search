@@ -1,0 +1,5 @@
+- "!include public_play_styles.yaml"
+- "!include public_songs.yaml"
+- "!include public_track_types.yaml"
+- "!include public_tracks.yaml"
+- "!include public_versions.yaml"
